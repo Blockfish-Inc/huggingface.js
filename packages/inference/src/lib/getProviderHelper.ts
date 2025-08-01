@@ -7,6 +7,7 @@ import * as Fireworks from "../providers/fireworks-ai.js";
 import * as Groq from "../providers/groq.js";
 import * as HFInference from "../providers/hf-inference.js";
 import * as Hyperbolic from "../providers/hyperbolic.js";
+import * as Metay from "../providers/metay.js";
 import * as Nebius from "../providers/nebius.js";
 import * as Novita from "../providers/novita.js";
 import * as Nscale from "../providers/nscale.js";
@@ -116,6 +117,9 @@ export const PROVIDERS: Record<InferenceProvider, Partial<Record<InferenceTask, 
 		conversational: new Hyperbolic.HyperbolicConversationalTask(),
 		"text-generation": new Hyperbolic.HyperbolicTextGenerationTask(),
 	},
+	metay: {
+		conversational: new Metay.MetayConversationalTask(),
+	},
 	nebius: {
 		"text-to-image": new Nebius.NebiusTextToImageTask(),
 		conversational: new Nebius.NebiusConversationalTask(),
@@ -147,12 +151,13 @@ export const PROVIDERS: Record<InferenceProvider, Partial<Record<InferenceTask, 
 	sambanova: {
 		conversational: new Sambanova.SambanovaConversationalTask(),
 		"feature-extraction": new Sambanova.SambanovaFeatureExtractionTask(),
-	},
+	},	
 	together: {
 		"text-to-image": new Together.TogetherTextToImageTask(),
 		conversational: new Together.TogetherConversationalTask(),
 		"text-generation": new Together.TogetherTextGenerationTask(),
 	},
+
 };
 
 /**
